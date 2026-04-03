@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-brand-50: #eff6ff;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+  --font-display: var(--font-montserrat), sans-serif;
+
+  --animate-subtle-bounce: subtle-bounce 3s infinite;
+}
+
+@keyframes subtle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #09090b; 
+  --selection-bg: #dbeafe;
+  --selection-text: #1e40af;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #09090b;
+    --foreground: #fafafa;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-gray-200 outline-none transition-colors duration-200;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased min-h-screen;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+input:focus, select:focus {
+  @apply ring-4 ring-blue-500/10 border-blue-500;
+}
