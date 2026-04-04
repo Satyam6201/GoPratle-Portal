@@ -6,7 +6,6 @@ import Step1Basics from "@/components/forms/Step1Basics";
 import Step2CategoryFields from "@/components/forms/Step2CategoryFields";
 import Step3Review from "@/components/forms/Step3Review";
 
-// Advanced Animation Variants
 const containerVariants = {
   initial: { opacity: 0, scale: 0.95, y: 30 },
   animate: { 
@@ -68,11 +67,9 @@ export default function Home() {
             layout
             className="bg-white/70 backdrop-blur-2xl rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] overflow-hidden border border-white/50 relative"
           >
-            {/* Glow Decorative Elements */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-400/10 blur-3xl rounded-full" />
             <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-400/10 blur-3xl rounded-full" />
 
-            {/* Header Section */}
             <div className="px-10 pt-10 relative z-10">
               <div className="flex justify-between items-center mb-6">
                 <motion.div layout>
